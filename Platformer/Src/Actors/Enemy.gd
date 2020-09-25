@@ -3,6 +3,10 @@ extends Actor
 func _ready():
 	set_physics_process(false)
 	velocity.x = -speed.x
+	
+func _on_StompDetection_body_entered(body):
+	get_node("CollisionShape2D").disabled = true
+	queue_free()
 
 func _physics_process(delta):
 	if is_on_wall():
@@ -10,3 +14,4 @@ func _physics_process(delta):
 		
 	velocity.y = gravity * delta 
 	velocity.y = move_and_slide(velocity, floor_normal).y
+

@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/Actors/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/start-assets/enemy.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42, 40 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 55.0288, 4.46768 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -24,3 +27,13 @@ position = Vector2( -0.420435, 0 )
 scale = Vector2( 5.24653, 4.82608 )
 rect = Rect2( -10, -20, 20, 20 )
 physics_process_parent = true
+
+[node name="StompDetection" type="Area2D" parent="."]
+modulate = Color( 1, 0.427451, 0.427451, 1 )
+position = Vector2( 0.749176, -265.575 )
+collision_layer = 2147483650
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetection"]
+position = Vector2( -1.12372, 161.843 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="StompDetection" to="." method="_on_StompDetection_body_entered"]

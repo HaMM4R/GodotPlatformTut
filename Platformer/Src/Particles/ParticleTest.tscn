@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.42963, 0.540741, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.508704, 0.508704, 0.508704, 1, 0.911111, 0.911111, 0.911111, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+trail_color_modifier = SubResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 14.32
+flag_disable_z = true
+direction = Vector3( 1, 50, 0 )
+gravity = Vector3( 0, 5, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+scale = 3.0
+
+[sub_resource type="Environment" id=6]
+glow_enabled = true
+glow_intensity = 3.52
+glow_bloom = 0.58
+glow_hdr_threshold = 0.0
+
+[node name="ParticleTest" type="Particles2D"]
+modulate = Color( 0, 0, 3.47, 1 )
+process_material = SubResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )

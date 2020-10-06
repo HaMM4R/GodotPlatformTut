@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/Audio/visualiser.gd" type="Script" id=1]
+[ext_resource path="res://Src/Audio/geekusa.wav" type="AudioStream" id=2]
+
+[node name="AudioTest" type="AudioStreamPlayer2D"]
+position = Vector2( 951.398, 533.969 )
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="visualiser" type="Node2D" parent="."]
+position = Vector2( -883.592, -31.7839 )
+script = ExtResource( 1 )

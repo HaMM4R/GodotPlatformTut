@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/geekusa.wav-fd5a47b998285bf9d73b473b7b9e3a30.sample"
+
+[deps]
+
+source_file="res://Src/Audio/geekusa.wav"
+dest_files=[ "res://.import/geekusa.wav-fd5a47b998285bf9d73b473b7b9e3a30.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
